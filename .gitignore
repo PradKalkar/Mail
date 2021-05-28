@@ -1,0 +1,4 @@
+*.catalyst
+*.vscode
+*.pyc
+db.sqlite3
