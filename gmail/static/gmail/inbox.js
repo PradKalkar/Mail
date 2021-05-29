@@ -1,3 +1,7 @@
+function capitalize(string){
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // Use buttons to toggle between views
@@ -30,8 +34,4 @@ function load_mailbox(mailbox) {
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${capitalize(mailbox)}</h3>`;
-}
-
-function capitalize(string){
-  return string.charAt(0).toUpperCase() + string.slice(1);
 }
