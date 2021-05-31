@@ -19,11 +19,12 @@ class Email(models.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "user": self.user.email,
             "sender": self.sender.email,
             "recipients": [user.email for user in self.recipients.all()],
             "subject": self.subject,
             "body": self.body,
-            "timestamp": self.timestamp.strftime("%b %d %Y, %I:%M %p"),
+            "timestamp": self.timestamp,
             "read": self.read,
             "archived": self.archived
         }
