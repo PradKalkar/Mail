@@ -41,7 +41,6 @@ function load_mailbox(mailbox) {
   fetch(`/emails/${mailbox}`)
     .then(response => response.json())
     .then(emails => {
-      console.log(emails)
       emails.forEach(element => {
         const isoDateTime = new Date(element.timestamp);
         const localDateTime = isoDateTime.toLocaleDateString('en-US', options) + " " + isoDateTime.toLocaleTimeString();
@@ -68,12 +67,8 @@ function load_mailbox(mailbox) {
         }
         else is_read = "";
 
-        // check elements body and if its more than 100 characters long append 3 dots
-        let element_body = element.body;
+        // check elements subject and if its more than 100 characters long append 3 dots
         let element_subject = element.subject;
-        if (element_body.length > 100){
-          element_body = element_body.slice(0, 100) + ' ...';
-        }
         if (element.subject.length > 100){
           element_subject = element_subject.slice(0, 100) + ' ...';
         }
@@ -89,8 +84,6 @@ function load_mailbox(mailbox) {
         ${element_subject} 
         <br>
         ${recipients_to_display} | ${localDateTime}
-        <br>
-        ${element_body}
       </div>`;
 
         document.querySelector("#emails-view").append(item);
@@ -117,12 +110,22 @@ function show_mail(id, mailbox) {
       let item = document.createElement("div");
       item.className = `card items`;
 
+      let email_body = '';
+      for (let i = 0; i < email.body.length; i++){
+        if (email.body[i] == '\n'){
+          email_body += "<br>"
+        }
+        else{
+          email_body += email.body[i];
+        }
+      }
+
   item.innerHTML = `<div style="white-space: no-wrap; word-wrap: break-word">
         <b>Sender</b>: ${email.sender} <br>
         <b>Recipients</b>: ${email.recipients} <br>
         <b>Subject</b>: ${email.subject} <br>
         <b>Time</b>: ${localDateTime} <br>
-        <br>${email.body}
+        <br>${email_body}
       </div>`;
 
       // when we double click on email, revert to that particular mailbox
@@ -152,7 +155,7 @@ function show_mail(id, mailbox) {
       reply.className = `btn btn-outline-success m-2`;
       reply.textContent = "Reply";
       reply.addEventListener("click", () => {
-        reply_mail(email.sender, email.subject, email.body, localDateTime);
+        reply_mail(email.sender, email.subject, email_body, localDateTime);
       });
       document.querySelector("#emails-view").append(reply);
     });
