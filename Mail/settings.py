@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'Mail.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3c3nmlk4msnju',
+        'HOST': 'ec2-54-145-224-156.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'cwdhqaxembvhdz',
+        'PASSWORD': '04a009678a9b0a791b15cacf7dcbc2d9c8044c933194ad1ddcec3fe311d6dfef'
     }
 }
 
