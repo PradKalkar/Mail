@@ -30,6 +30,7 @@ function compose_email() {
 
 function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
+  history.pushState({mailbox: mailbox}, '', `${mailbox}`)
   document.querySelector(`#${mailbox}`).disabled = true; // disable the button after its triggered
   document.querySelector("#emails-view").style.display = "block";
   document.querySelector("#compose-view").style.display = "none";
@@ -99,6 +100,8 @@ function load_mailbox(mailbox) {
 }
 
 function show_mail(id, mailbox) {
+  console.log(mailbox, id);
+  history.pushState({mailbox: mailbox, id: id}, '', `${mailbox}/${id}`)
   fetch(`/emails/${id}`)
     .then(response => response.json())
     .then(email => {
@@ -187,6 +190,7 @@ function make_read(id) {
 }
 
 function reply_mail(sender, subject, body, timestamp) {
+  history.pushState({sender: sender, subject: subject, body: body, timestamp: timestamp}, '', 'reply');
   compose_email();
   if (!/^Re:/.test(subject)) subject = `Re: ${subject}`;
   document.querySelector("#compose-recipients").value = sender;
@@ -195,4 +199,17 @@ function reply_mail(sender, subject, body, timestamp) {
   pre_fill = `On ${timestamp} ${sender} wrote:\n${body}\n\n`;
 
   document.querySelector("#compose-body").value = pre_fill;
+}
+
+window.onpopstate = event => {
+  const state = event.state
+  if (sender in state){
+    reply_mail(state.sender, state.subject, state.body, state.timestamp);
+  }
+  else if (id in state){
+    show_mail(state.id, state.mailbox);
+  }
+  else{
+    load_mailbox(state.mailbox);
+  }
 }

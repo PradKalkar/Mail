@@ -30,7 +30,8 @@ function compose_email() {
 
 function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
-  document.querySelector(`#${mailbox}`).disabled = true; // disable the button after its triggered
+  console.log("button is not " + document.querySelector(`#${mailbox}`).disabled)
+  document.querySelector(`#${mailbox}`).disabled = true;
   document.querySelector("#emails-view").style.display = "block";
   document.querySelector("#compose-view").style.display = "none";
 
@@ -94,7 +95,7 @@ function load_mailbox(mailbox) {
         });
       });
 
-      document.querySelector(`#${mailbox}`).disabled = false // now enable the button since our job is done
+      document.querySelector(`#${mailbox}`).disabled = false
     });
 }
 
@@ -139,7 +140,7 @@ function show_mail(id, mailbox) {
       document.querySelector("#emails-view").append(item);
 
       // creating archive button
-      const archive = document.createElement("btn");
+      let archive = document.createElement("btn");
       archive.className = `btn btn-outline-info my-2`;
 
       archive.addEventListener("click", () => {
@@ -154,7 +155,7 @@ function show_mail(id, mailbox) {
       // this is not needed when the user is itself the sender of email
       if (email.user === email.sender) return;
 
-      const reply = document.createElement("btn");
+      let reply = document.createElement("btn");
       reply.className = `btn btn-outline-success m-2`;
       reply.textContent = "Reply";
       reply.addEventListener("click", () => {

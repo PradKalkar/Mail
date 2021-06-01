@@ -7,9 +7,9 @@ function capitalize(string){
 document.addEventListener('DOMContentLoaded', function() {
 
     // Use buttons to toggle between views
-    document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
-    document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
-    document.querySelector('#archived').addEventListener('click', () => load_mailbox('archived'));
+    document.querySelector('#inbox').addEventListener('click', () => setTimeout(load_mailbox, 1000, 'inbox'));
+    document.querySelector('#sent').addEventListener('click', () => setTimeout(load_mailbox, 1000, 'inbox'));
+    document.querySelector('#archived').addEventListener('click', () => setTimeout(load_mailbox, 1000, 'inbox'));
     document.querySelector('#compose').addEventListener('click', compose_email);
   
     // By default, load the inbox
@@ -30,7 +30,6 @@ function compose_email() {
 
 function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
-  document.querySelector(`#${mailbox}`).disabled = true; // disable the button after its triggered
   document.querySelector("#emails-view").style.display = "block";
   document.querySelector("#compose-view").style.display = "none";
 
@@ -93,8 +92,6 @@ function load_mailbox(mailbox) {
           show_mail(element.id, mailbox);
         });
       });
-
-      document.querySelector(`#${mailbox}`).disabled = false // now enable the button since our job is done
     });
 }
 
@@ -139,7 +136,7 @@ function show_mail(id, mailbox) {
       document.querySelector("#emails-view").append(item);
 
       // creating archive button
-      const archive = document.createElement("btn");
+      let archive = document.createElement("btn");
       archive.className = `btn btn-outline-info my-2`;
 
       archive.addEventListener("click", () => {
@@ -154,7 +151,7 @@ function show_mail(id, mailbox) {
       // this is not needed when the user is itself the sender of email
       if (email.user === email.sender) return;
 
-      const reply = document.createElement("btn");
+      let reply = document.createElement("btn");
       reply.className = `btn btn-outline-success m-2`;
       reply.textContent = "Reply";
       reply.addEventListener("click", () => {
