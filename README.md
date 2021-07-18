@@ -65,17 +65,15 @@ The web app is deployed to Heroku
 * [Bootstrap](https://getbootstrap.com)
 
 ## Product Screenshots
-[![home][home]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![auth][auth]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![videochathome][videochathome]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![invalid][invalid]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![alone][alone]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![admitrequest][admitrequest]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![waiting][waiting]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![twopeople][twopeople]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![inmeetingchat][inmeetingchat]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![isTyping][isTyping]](https://github.com/PradKalkar/microsoft-teams-clone)
-[![chatfeatures][chatfeatures]](https://github.com/PradKalkar/microsoft-teams-clone)
+[![Login][Login]](https://github.com/PradKalkar/Mail)
+[![Register][Register]](https://github.com/PradKalkar/Mail)
+[![Inbox][Inbox]](https://github.com/PradKalkar/Mail)
+[![Sent][Sent]](https://github.com/PradKalkar/Mail)
+[![Compose][Compose]](https://github.com/PradKalkar/Mail)
+[![View][View]](https://github.com/PradKalkar/Mail)
+[![Reply][Reply]](https://github.com/PradKalkar/Mail)
+[![Archived][Archived]](https://github.com/PradKalkar/Mail)
+[![IncorrectAuth][IncorrectAuth]](https://github.com/PradKalkar/Mail)
 
 <!-- CONTACT -->
 ## Contact
@@ -83,15 +81,12 @@ Pradnesh Kalkar - ppk.kalkar@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Landing%20Page.png
-[waiting]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Waiting.png
-[auth]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Auth.png
-[alone]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Myself.png
-[twopeople]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/TwoPeople.png
-[inmeetingchat]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/InMeetChat.png
-[isTyping]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/isTyping.png
-[videochathome]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Videochat%20Home.png
-[home]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/Landing%20Page.png
-[chatfeatures]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/ChatFeatures.png
-[invalid]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/InvalidMeetCode.png
-[admitrequest]: https://github.com/PradKalkar/microsoft-teams-clone/blob/master/client/public/product_images/AdminRequest.png
+[Login]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Login%20Page.png
+[Register]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Register%20Page.png
+[Inbox]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Inbox.png
+[Sent]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Sent.png
+[Compose]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Compose.png
+[View]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Email%20View.png
+[Reply]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Reply.png
+[Archived]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Archived.png
+[IncorrectAuth]: https://github.com/PradKalkar/Mail/blob/master/Screenshots/Invalid%20EmailPassword.png
